@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
 
+import './App.css';
+// import GmailTreeView from "./components/topic"
+import FadeMenu from "./components/topic"
+import ButtonAppBar from "./components/header"
+import Paper from "./components/Quetions"
+import Results from"./components/Results"
+import Auth from "./components/auth"
+import Register from "./components/register"
+import {BrowserRouter as Router,Routes,Route} from "react-router-dom"
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    // <Homepage/>
+      
+      <Routes>
+        <Route path='*' element={<Auth/>}/>
+        <Route path='/register' element={<Register/>}/>
+        <Route path='/Quetions' element={<Paper />}/>
+        <Route path='/Results' element={<Results />}/>
+        {/* <Route path='/Profile' element={<MyProfile/>}/>
+        <Route path="/displayAnswer" element={<Displayanswer/>}/>
+        <Route path="/FinalMarks" element={<FinalMarks/>}/> */}
+      </Routes>
+    
+    
   );
 }
 
